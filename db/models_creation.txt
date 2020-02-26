@@ -1,0 +1,2 @@
+rails g model Cases title:string description:string value:decimal court_date:datetime
+rails g model Contacts first_name:string last_name:string case_role:string email:string case:belongs_to
