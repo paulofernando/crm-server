@@ -3,7 +3,7 @@ class CreateContacts < ActiveRecord::Migration[6.0]
     create_table :contacts do |t|
       t.string :first_name
       t.string :last_name
-      t.string :case_role
+      t.integer :case_role
       t.string :email
       t.belongs_to :case, null: false, foreign_key: true
 
