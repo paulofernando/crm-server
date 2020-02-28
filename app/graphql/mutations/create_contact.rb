@@ -1,7 +1,7 @@
 class Mutations::CreateContact < Mutations::BaseMutation
     argument :first_name, String, required: true
-    argument :last_name, String, required: true
-    argument :case_role, String, required: true
+    argument :last_name, String, required: true    
+    argument :case_role, Types::Enums::Role, required: true
     argument :email, String, required: true
     argument :case_id, ID, required: true
   

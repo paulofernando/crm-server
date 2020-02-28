@@ -9,6 +9,7 @@ module Types
 
     # /case/:id
     field :case, Types::CaseType, null: false do
+      description 'Find a case by ID'
       argument :id, ID, required: true
     end
 
@@ -25,6 +26,7 @@ module Types
 
     # /contact/:id
     field :contact, Types::ContactType, null: false do
+      description 'Find a contact by ID'
       argument :id, ID, required: true
     end
 

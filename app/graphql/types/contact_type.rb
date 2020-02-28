@@ -1,9 +1,10 @@
 module Types
   class ContactType < Types::BaseObject
     field :id, ID, null: false
-    field :first_name, String, null: true
-    field :last_name, String, null: true
-    field :case_role, String, null: true
-    field :email, String, null: true
+    field :first_name, String, null: false
+    field :last_name, String, null: false
+    field :case_role, Enums::Role, null: false
+    field :email, String, null: false
+    field :case, Types::CaseType, null: false
   end
 end
