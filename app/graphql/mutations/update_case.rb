@@ -1,5 +1,6 @@
 module Cases
   class Mutations::UpdateCase < Mutations::BaseMutation
+    description "Update a case and return the updated case"
     argument :id, ID, required: true
     argument :title, String, required: true
     argument :description, String, required: true

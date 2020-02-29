@@ -1,5 +1,6 @@
 module Contacts
   class Mutations::CreateContact < Mutations::BaseMutation
+    description "Create a contact and retrieve it"
     argument :first_name, String, required: true
     argument :last_name, String, required: true
     argument :case_role, Types::Enums::Role, required: true
