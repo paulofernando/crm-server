@@ -1,22 +1,63 @@
-require 'test_helper'
+# require 'rails_helper'
 
-class Mutations::CreateCaseTest < ActiveSupport::TestCase
-  def perform(user: nil, **args)
-    Mutations::CreateCase.new(object: nil, field: nil, context: {}).resolve(args)
-  end
+# module Mutations
+#   module Case
+#     RSpec.describe CreateBook, type: :request do
+#       describe '.resolve' do
+#         # it 'creates a case' do          
+#         #   expect do
+            
+#         #   end.to change { Book.count }.by(1)
+#         # end
 
-  test 'create a new case' do
-    case = perform(
-        title: "Title 1",
-        description: "Description 1",
-        value:"1000.00",
-        courtDate: "01-01-2020"
-    )
+#         # it 'returns a case' do          
+#         #   json = JSON.parse(response.body)
+#         #   data = json['data']['createCase']
 
-    assert case.persisted?
-    assert_equal case.title, "Title 1"
-    assert_equal case.description, "Description 1"
-    assert_equal case.value, "1000.00"
-    assert_equal case.courtDate, "01-01-2020"
-  end
-end
+#         #   expect(data).to include(
+#         #     'id' => be_present,
+#         #     'title' => 'Test Title',
+#         #     'description' => 'Test Description',
+#         #     'value' => 1000.00,
+#         #     'courtDate' => '01-01-2020'
+#         #   )
+#         # end
+
+#         it 'returns a case' do
+#           book = create(title: 'Test Title', description: 'Test Description', value: 1000.00, courtDate: '01-01-2020')
+
+#           post '/graphql', params: { query: query(id: case.id) }
+
+#           json = JSON.parse(response.body)
+#           data = json['data']['createCase']
+
+#           expect(data).to include(
+#             'id' => be_present,
+#             'title' => 'Test Title',
+#             'description' => 'Test Description',
+#             'value' => 1000.00,
+#             'courtDate' => '01-01-2020'
+#           )
+#       end
+
+#       def query()
+#         <<~GQL
+#           mutation {
+#             createCase(
+#               title: "Title 1",
+#               description: "Description 1",
+#               value:1000.00,
+#               courtDate: "01-01-2020"  
+#             ) {
+#               id,
+#               title,
+#               description,
+#               value,
+#               courtDate
+#             }
+#           }
+#         GQL
+#       end
+#     end
+#   end
+# end
