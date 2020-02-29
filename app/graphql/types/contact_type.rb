@@ -3,7 +3,7 @@ module Types
     field :id, ID, null: false
     field :first_name, String, null: false
     field :last_name, String, null: false
-    field :case_role, Enums::Role, null: false
+    field :case_role, String, null: false
     field :email, String, null: false
     field :case, Types::CaseType, null: false
   end
