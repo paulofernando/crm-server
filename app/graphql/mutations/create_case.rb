@@ -1,5 +1,6 @@
 module Cases
   class Mutations::CreateCase < Mutations::BaseMutation
+    description "Create a case and retrieve it"
     argument :title, String, required: true
     argument :description, String, required: false
     argument :value, Float, required: true

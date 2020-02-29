@@ -1,5 +1,6 @@
 module Contacts
   class Mutations::DestroyContact < Mutations::BaseMutation
+    description "Destroy a contact and return the destroyed contact"
     argument :id, ID, required: true
 
     field :contact, Types::ContactType, null: false

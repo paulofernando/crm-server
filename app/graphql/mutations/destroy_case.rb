@@ -1,5 +1,6 @@
 module Cases
   class Mutations::DestroyCase < Mutations::BaseMutation
+    description "Destroy a case and return the destroyed case"
     argument :id, ID, required: true
 
     field :case, Types::CaseType, null: false

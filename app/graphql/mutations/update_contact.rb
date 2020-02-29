@@ -1,5 +1,6 @@
 module Contacts
   class Mutations::UpdateContact < Mutations::BaseMutation
+    description "Update a contact and return the updated contact"
     argument :id, ID, required: true
     argument :first_name, String, required: true
     argument :last_name, String, required: true
