@@ -1,14 +1,14 @@
 module Cases
   class Mutations::CreateCase < Mutations::BaseMutation
     argument :title, String, required: true
-    argument :description, String, required: true
+    argument :description, String, required: false
     argument :value, Float, required: true
     argument :court_date, String, required: true
 
     field :case, Types::CaseType, null: false
     field :errors, [String], null: false
 
-    def resolve(title:, description:, value:, court_date:)
+    def resolve(title:, description: nil, value:, court_date:)
       courtCase = Case.new(title: title, description: description, value: value, court_date: court_date)
       if courtCase.save
         {
