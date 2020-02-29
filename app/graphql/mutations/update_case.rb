@@ -1,5 +1,6 @@
 module Cases
-  class Mutations::CreateCase < Mutations::BaseMutation
+  class Mutations::UpdateCase < Mutations::BaseMutation
+    argument :id, ID, required: true
     argument :title, String, required: true
     argument :description, String, required: true
     argument :value, Float, required: true
@@ -8,9 +9,10 @@ module Cases
     field :case, Types::CaseType, null: false
     field :errors, [String], null: false
 
-    def resolve(title:, description:, value:, court_date:)
-      courtCase = Case.new(title: title, description: description, value: value, court_date: court_date)
-      if courtCase.save
+    def resolve(id:, title:, description:, value:, court_date:)
+      courtCase = Case.find(id)
+
+      if courtCase.update(title: title, description: description, value: value, court_date: court_date)
         {
           case: courtCase,
           errors: [],
