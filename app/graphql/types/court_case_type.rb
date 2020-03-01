@@ -1,5 +1,5 @@
 module Types
-  class CaseType < Types::BaseObject
+  class CourtCaseType < Types::BaseObject
     field :id, ID, null: false
     field :title, String, null: false
     field :description, String, null: true

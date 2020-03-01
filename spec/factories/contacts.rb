@@ -4,5 +4,6 @@ FactoryBot.define do
     last_name { "MyString" }
     case_role { "MyString" }
     email { "MyString" }
+    court_case { nil }
   end
 end
