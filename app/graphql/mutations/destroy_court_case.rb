@@ -1,13 +1,13 @@
 module Cases
-  class Mutations::DestroyCase < Mutations::BaseMutation
-    description "Destroy a case and return the destroyed case"
+  class Mutations::DestroyCourtCase < Mutations::BaseMutation
+    description "Destroy a court case and return the destroyed case"
     argument :id, ID, required: true
 
-    field :case, Types::CaseType, null: false
+    field :case, Types::CourtCaseType, null: false
     field :errors, [String], null: false
 
     def resolve(id:)
-      courtCase = Case.find(id)
+      courtCase = CourtCase.find(id)
       if courtCase.destroy()
         {
           case: courtCase,

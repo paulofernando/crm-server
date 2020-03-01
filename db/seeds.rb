@@ -34,7 +34,7 @@
 # 5.times do
 #     m_case = Case.create(title:Faker::Lorem.sentence(word_count: 3), description:Faker::Lorem.sentence(word_count: 5), value:Faker::Number.decimal(l_digits: 2),
 #         court_date:Faker::Date.forward(days: 100))
-    
+
 #     m_case.contacts.push(accused[rand(AMOUNT_PER_ROLE - 1)])
 #     m_case.contacts.push(judges[rand(AMOUNT_PER_ROLE - 1)])
 #     m_case.contacts.push(barristers[rand(AMOUNT_PER_ROLE - 1)])
@@ -44,11 +44,11 @@
 # ----------------------------------------------------------------------------------------------
 
 5.times do
-    m_case = Case.create(title:Faker::Lorem.sentence(word_count: 3), description:Faker::Lorem.sentence(word_count: 5), value:Faker::Number.decimal(l_digits: 2),
-        court_date:Faker::Date.forward(days: 100))
-    
-    m_case.contacts.create(first_name: Faker::Name.first_name, last_name:Faker::Name.last_name, case_role:'Accused', email:Faker::Internet.email)
-    m_case.contacts.create(first_name: Faker::Name.first_name, last_name:Faker::Name.last_name, case_role:'Barrister', email:Faker::Internet.email)
-    m_case.contacts.create(first_name: Faker::Name.first_name, last_name:Faker::Name.last_name, case_role:'Prosecutor', email:Faker::Internet.email)
-    m_case.contacts.create(first_name: Faker::Name.first_name, last_name:Faker::Name.last_name, case_role:'Judge', email:Faker::Internet.email)
+  court_case = CourtCase.create(title: Faker::Lorem.sentence(word_count: 3), description: Faker::Lorem.sentence(word_count: 5), value: Faker::Number.decimal(l_digits: 2),
+                                court_date: Faker::Date.forward(days: 100))
+
+  court_case.contacts.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, case_role: "Accused", email: Faker::Internet.email)
+  court_case.contacts.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, case_role: "Barrister", email: Faker::Internet.email)
+  court_case.contacts.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, case_role: "Prosecutor", email: Faker::Internet.email)
+  court_case.contacts.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, case_role: "Judge", email: Faker::Internet.email)
 end

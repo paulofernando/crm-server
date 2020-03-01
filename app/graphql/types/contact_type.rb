@@ -5,6 +5,6 @@ module Types
     field :last_name, String, null: false
     field :case_role, String, null: false
     field :email, String, null: false
-    field :case, Types::CaseType, null: false
+    field :court_case, Types::CourtCaseType, null: false
   end
 end

@@ -1,20 +1,20 @@
 module Types
   class QueryType < Types::BaseObject
     # /cases
-    field :cases, [Types::CaseType], null: false
+    field :cases, [Types::CourtCaseType], null: false
 
     def cases
-      Case.all
+      CourtCase.all
     end
 
     # /case/:id
-    field :case, Types::CaseType, null: false do
-      description 'Find a case by ID'
+    field :case, Types::CourtCaseType, null: false do
+      description "Find a case by ID"
       argument :id, ID, required: true
     end
 
     def case(id:)
-      Case.find(id)
+      CourtCase.find(id)
     end
 
     # /contacts
@@ -26,13 +26,12 @@ module Types
 
     # /contact/:id
     field :contact, Types::ContactType, null: false do
-      description 'Find a contact by ID'
+      description "Find a contact by ID"
       argument :id, ID, required: true
     end
 
     def contact(id:)
       Contact.find(id)
     end
-
   end
 end

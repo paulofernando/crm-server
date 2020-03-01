@@ -1,6 +1,6 @@
-class CreateCases < ActiveRecord::Migration[6.0]
+class CreateCourtCases < ActiveRecord::Migration[6.0]
   def change
-    create_table :cases do |t|
+    create_table :court_cases do |t|
       t.string :title
       t.string :description
       t.decimal :value
