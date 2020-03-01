@@ -1,19 +1,19 @@
 module Types
   class QueryType < Types::BaseObject
-    # /cases
-    field :cases, [Types::CourtCaseType], null: false
+    # /courtCases
+    field :courtCases, [Types::CourtCaseType], null: false
 
-    def cases
+    def courtCases
       CourtCase.all
     end
 
-    # /case/:id
-    field :case, Types::CourtCaseType, null: false do
+    # /courtCase/:id
+    field :courtCase, Types::CourtCaseType, null: false do
       description "Find a case by ID"
       argument :id, ID, required: true
     end
 
-    def case(id:)
+    def courtCase(id:)
       CourtCase.find(id)
     end
 

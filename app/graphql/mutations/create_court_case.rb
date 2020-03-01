@@ -6,19 +6,19 @@ module CourtCases
     argument :value, Float, required: true
     argument :court_date, String, required: true
 
-    field :case, Types::CourtCaseType, null: false
+    field :court_case, Types::CourtCaseType, null: false
     field :errors, [String], null: false
 
     def resolve(title:, description: nil, value:, court_date:)
       courtCase = CourtCase.new(title: title, description: description, value: value, court_date: court_date)
       if courtCase.save
         {
-          case: courtCase,
+          court_case: courtCase,
           errors: [],
         }
       else
         {
-          case: nil,
+          court_case: nil,
           errors: courtCase.errors.full_messages,
         }
       end
