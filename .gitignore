@@ -68,3 +68,6 @@ yarn-debug.log*
 
 # Ignore database config
 database.yml
+
+# Ignore application configuration
+/config/application.yml
