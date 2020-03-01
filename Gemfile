@@ -54,3 +54,6 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rspec-rails", "~> 3.8.2"
 end
+
+gem "rails_12factor", group: :production
+gem "sprockets", "3.7.2"
