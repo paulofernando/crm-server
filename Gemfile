@@ -9,6 +9,8 @@ gem "rails", "~> 6.0.2", ">= 6.0.2.1"
 gem "pg", ">= 0.18", "< 2.0"
 # Figaro
 gem "figaro"
+# Rack Cors
+gem "rack-cors", :require => "rack/cors"
 # Use Puma as the app server
 gem "puma", "~> 4.1"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
