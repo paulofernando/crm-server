@@ -44,7 +44,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Ruby port of GraphQL
 gem "graphql"
-group :development do
+group :development, :production do
   gem "graphiql-rails"
   gem "faker"
 end
