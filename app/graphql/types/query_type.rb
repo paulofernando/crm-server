@@ -9,7 +9,7 @@ module Types
 
     # /courtCase/:id
     field :court_case, Types::CourtCaseType, null: false do
-      description "Find a case by ID"
+      description "Find a court case by ID"
       argument :id, ID, required: true
     end
 
