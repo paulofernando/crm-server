@@ -11,16 +11,16 @@ module CourtCases
     field :errors, [String], null: false
 
     def resolve(id:, **args)
-      courtCase = CourtCase.find(id)
-      if courtCase.update(args)
+      court_case = CourtCase.find(id)
+      if court_case.update(args)
         {
-          court_case: courtCase,
+          court_case: court_case,
           errors: [],
         }
       else
         {
           court_case: nil,
-          errors: courtCase.errors.full_messages,
+          errors: court_case.errors.full_messages,
         }
       end
     end
