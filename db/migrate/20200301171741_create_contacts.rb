@@ -5,7 +5,7 @@ class CreateContacts < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.string :case_role
       t.string :email
-      t.references :court_case, null: false, foreign_key: true
+      t.references :court_case, foreign_key: true
 
       t.timestamps
     end
