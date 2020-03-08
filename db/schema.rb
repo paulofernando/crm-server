@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_03_01_171741) do
     t.string "last_name"
     t.string "case_role"
     t.string "email"
-    t.bigint "court_case_id", null: false
+    t.bigint "court_case_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["court_case_id"], name: "index_contacts_on_court_case_id"

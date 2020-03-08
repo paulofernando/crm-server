@@ -9,17 +9,17 @@ module CourtCases
     field :court_case, Types::CourtCaseType, null: false
     field :errors, [String], null: false
 
-    def resolve(title:, description: nil, value:, court_date:)
-      courtCase = CourtCase.new(title: title, description: description, value: value, court_date: court_date)
-      if courtCase.save
+    def resolve(**args)
+      court_case = CourtCase.new(**args)
+      if court_case.save
         {
-          court_case: courtCase,
+          court_case: court_case,
           errors: [],
         }
       else
         {
           court_case: nil,
-          errors: courtCase.errors.full_messages,
+          errors: court_case.errors.full_messages,
         }
       end
     end
